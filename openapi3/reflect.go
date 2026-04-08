@@ -663,7 +663,8 @@ func (r *Reflector) setupResponse(o *Operation, oc openapi.OperationContext) err
 			cu.HTTPStatus = http.StatusOK
 		}
 
-		cu.ContentType = strings.Split(cu.ContentType, ";")[0]
+		// use the type without modifications
+		//cu.ContentType = strings.Split(cu.ContentType, ";")[0]
 
 		httpStatus := strconv.Itoa(cu.HTTPStatus)
 		resp := o.Responses.MapOfResponseOrRefValues[httpStatus].Response
