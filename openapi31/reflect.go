@@ -432,6 +432,13 @@ func (r *Reflector) parseParametersIn(
 			propertySchema := params.PropertySchema
 			field := params.Field
 
+			// HTTP parameters cannot be null (only absent), so remove null type
+			// for non-pointer, non-ref fields. This mirrors the openapi3 reflector behavior
+			// (s.Schema != nil && s.Schema.Nullable != nil && field.Type.Kind() != reflect.Ptr).
+			if propertySchema.Ref == nil && field.Type.Kind() != reflect.Ptr {
+				propertySchema.RemoveType(jsonschema.Null)
+			}
+
 			sm, err := propertySchema.ToSchemaOrBool().ToSimpleMap()
 			if err != nil {
 				return err
