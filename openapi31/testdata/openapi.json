@@ -44,17 +44,17 @@
       "name":"in_query3","in":"query","description":"Query parameter.","required":true,
       "schema":{"description":"Query parameter.","type":"integer"}
      },
-     {"name":"array_csv","in":"query","schema":{"items":{"type":"string"},"type":["array","null"]},"explode":false},
+     {"name":"array_csv","in":"query","schema":{"items":{"type":"string"},"type":"array"},"explode":false},
      {
-      "name":"array_swg2_csv","in":"query","schema":{"items":{"type":"string"},"type":["array","null"]},"style":"form",
+      "name":"array_swg2_csv","in":"query","schema":{"items":{"type":"string"},"type":"array"},"style":"form",
       "explode":false
      },
      {
-      "name":"array_swg2_ssv","in":"query","schema":{"items":{"type":"string"},"type":["array","null"]},
+      "name":"array_swg2_ssv","in":"query","schema":{"items":{"type":"string"},"type":"array"},
       "style":"spaceDelimited","explode":false
      },
      {
-      "name":"array_swg2_pipes","in":"query","schema":{"items":{"type":"string"},"type":["array","null"]},
+      "name":"array_swg2_pipes","in":"query","schema":{"items":{"type":"string"},"type":"array"},
       "style":"pipeDelimited","explode":false
      },
      {"name":"in_path","in":"path","required":true,"schema":{"type":"integer"}},
