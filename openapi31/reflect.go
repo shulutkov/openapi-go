@@ -487,7 +487,7 @@ func (r *Reflector) parseParametersIn(
 				}
 
 				p.Schema = nil
-				p.WithContentItem("application/json", MediaType{Schema: sm})
+				p.WithContentItem(mimeJSON, MediaType{Schema: sm})
 			} else {
 				ps, err := r.Reflect(reflect.New(field.Type).Interface(),
 					openapi.WithOperationCtx(oc, false, in),
