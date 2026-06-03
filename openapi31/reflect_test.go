@@ -507,7 +507,7 @@ func TestReflector_AddOperation_request_queryObject(t *testing.T) {
 			  {
 				"name":"in_query","in":"query",
 				"schema":{
-				  "additionalProperties":{"type":"number"},"type":["object","null"]
+				  "additionalProperties":{"type":"number"},"type":"object"
 				},
 				"style":"deepObject","explode":true
 			  }
@@ -608,7 +608,7 @@ func TestReflector_AddOperation_request_jsonQuery(t *testing.T) {
 				"name":"three","in":"query",
 				"schema":{
 				  "additionalProperties":{"type":"integer"},
-				  "type":["object","null"]
+				  "type":"object"
 				},
 				"style":"deepObject","explode":true
 			  },
